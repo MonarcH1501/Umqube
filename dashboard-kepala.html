@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dashboard Kepala Divisi - UmQube</title>
+<style>
+  /* Sama style seperti dashboard bos */
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f2f9;
+    color: #333;
+  }
+  .sidebar {
+    width: 250px;
+    background: #4A148C;
+    color: white;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    float: left;
+  }
+  .sidebar h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+  .sidebar nav div {
+    cursor: pointer;
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+  }
+  .sidebar nav div span {
+    margin-left: 10px;
+  }
+  .sidebar nav div:hover {
+    text-decoration: underline;
+  }
+  .main {
+    margin-left: 250px;
+    padding: 20px;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header h1 {
+    color: #4A148C;
+    text-transform: capitalize;
+  }
+  .button {
+    background: #4A148C;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+  .card {
+    background: white;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 8px #ccc;
+  }
+</style>
+</head>
+<body>
+
+<div class="sidebar">
+  <h2>UmQube</h2>
+  <nav>
+    <div><span>🏠</span><span>Home</span></div>
+    <div><span>📅</span><span>Calendar</span></div>
+    <div><span>👥</span><span>Organizations</span></div>
+    <div><span>🔔</span><span>Reports</span></div>
+    <div><span>❓</span><span>Help</span></div>
+    <div><span>📖</span><span>Manual</span></div>
+    <div><span>⚙️</span><span>Settings</span></div>
+  </nav>
+</div>
+
+<div class="main">
+  <div class="header">
+    <h1>home</h1>
+    <button class="button" id="logoutBtn">Logout</button>
+  </div>
+
+  <div class="card">
+    <h3>Overview Kepala Divisi</h3>
+    <p>Ini adalah halaman dashboard untuk kepala divisi.</p>
+  </div>
+
+  <div class="card">
+    <h3>Jadwal Meeting</h3>
+    <ul>
+      <li>Meeting Proyek A - 10 Juni 2025</li>
+      <li>Meeting Evaluasi - 15 Juni 2025</li>
+      <li>Meeting Tim - 20 Juni 2025</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  if(sessionStorage.getItem("userRole") !== "kepala") {
+    window.location.href = "index.html";
+  }
+
+  document.getElementById("logoutBtn").addEventListener("click", () => {
+    sessionStorage.removeItem("userRole");
+    window.location.href = "index.html";
+  });
+</script>
+
+</body>
+</html>
