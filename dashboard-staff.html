@@ -79,7 +79,7 @@
   <h2>UmQube</h2>
   <nav>
     <div><span>🏠</span><span>Home</span></div>
-    <div><span>📅</span><span>Calendar</span></div>
+    <div id="calendarNav"><span>📅</span><span>Calendar</span></div>
     <div><span>👥</span><span>Organizations</span></div>
     <div><span>🔔</span><span>Reports</span></div>
     <div><span>❓</span><span>Help</span></div>
@@ -113,6 +113,10 @@
     sessionStorage.removeItem("userRole");
     window.location.href = "index.html";
   });
+
+  document.getElementById("calendarNav").addEventListener("click", () => {
+      window.location.href = "calendar-staff.html";
+    });
 </script>
 
 </body>
