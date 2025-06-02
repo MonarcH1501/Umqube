@@ -1,134 +1,138 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Dashboard Bos - UmQube</title>
-<style>
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f4f2f9;
-    color: #333;
-  }
-  .sidebar {
-    width: 250px;
-    background: #4A148C;
-    color: white;
-    height: 100vh;
-    padding: 20px;
-    box-sizing: border-box;
-    float: left;
-  }
-  .sidebar h2 {
-    font-size: 24px;
-    margin-bottom: 30px;
-  }
-  .sidebar nav div {
-    cursor: pointer;
-    margin: 15px 0;
-    display: flex;
-    align-items: center;
-  }
-  .sidebar nav div span {
-    margin-left: 10px;
-  }
-  .sidebar nav div:hover {
-    text-decoration: underline;
-  }
-  .main {
-    margin-left: 250px;
-    padding: 20px;
-  }
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .header h1 {
-    color: #4A148C;
-    text-transform: capitalize;
-  }
-  .button {
-    background: #4A148C;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    cursor: pointer;
-    border-radius: 3px;
-  }
-  .card {
-    background: white;
-    padding: 15px;
-    margin-top: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 8px #ccc;
-  }
-  ul {
-    padding-left: 20px;
-  }
-  ul li {
-    margin-bottom: 5px;
-  }
-  .underline-link {
-    color: #4A148C;
-    cursor: pointer;
-    text-decoration: underline;
-  }
-</style>
-</head>
-<body>
+  <!DOCTYPE html>
+  <html lang="id">
+  <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard Bos - UmQube</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f2f9;
+      color: #333;
+    }
+    .sidebar {
+      width: 250px;
+      background: #4A148C;
+      color: white;
+      height: 100vh;
+      padding: 20px;
+      box-sizing: border-box;
+      float: left;
+    }
+    .sidebar h2 {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+    .sidebar nav div {
+      cursor: pointer;
+      margin: 15px 0;
+      display: flex;
+      align-items: center;
+    }
+    .sidebar nav div span {
+      margin-left: 10px;
+    }
+    .sidebar nav div:hover {
+      text-decoration: underline;
+    }
+    .main {
+      margin-left: 250px;
+      padding: 20px;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .header h1 {
+      color: #4A148C;
+      text-transform: capitalize;
+    }
+    .button {
+      background: #4A148C;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+    .card {
+      background: white;
+      padding: 15px;
+      margin-top: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 8px #ccc;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    ul li {
+      margin-bottom: 5px;
+    }
+    .underline-link {
+      color: #4A148C;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  </style>
+  </head>
+  <body>
 
-<div class="sidebar">
-  <h2>UmQube</h2>
-  <nav>
-    <div><span>🏠</span><span>Home</span></div>
-    <div><span>📅</span><span>Calendar</span></div>
-    <div><span>👥</span><span>Organizations</span></div>
-    <div><span>🔔</span><span>Reports</span></div>
-    <div><span>❓</span><span>Help</span></div>
-    <div><span>📖</span><span>Manual</span></div>
-    <div><span>⚙️</span><span>Settings</span></div>
-  </nav>
-</div>
-
-<div class="main">
-  <div class="header">
-    <h1>home</h1>
-    <button class="button" id="logoutBtn">Logout</button>
+  <div class="sidebar">
+    <h2>UmQube</h2>
+    <nav>
+      <div><span>🏠</span><span>Home</span></div>
+      <div id="calendarNav"><span>📅</span><span>Calendar</span></div>
+      <div><span>👥</span><span>Organizations</span></div>
+      <div><span>🔔</span><span>Reports</span></div>
+      <div><span>❓</span><span>Help</span></div>
+      <div><span>📖</span><span>Manual</span></div>
+      <div><span>⚙️</span><span>Settings</span></div>
+    </nav>
   </div>
 
-  <div class="card">
-    <h3>Diagram Penjualan Mei 2025</h3>
-    <img src="https://via.placeholder.com/600x250?text=Line+Chart" alt="Line Chart" style="width:100%;height:auto" />
+  <div class="main">
+    <div class="header">
+      <h1>home</h1>
+      <button class="button" id="logoutBtn">Logout</button>
+    </div>
+
+    <div class="card">
+      <h3>Diagram Penjualan Mei 2025</h3>
+      <img src="https://via.placeholder.com/600x250?text=Line+Chart" alt="Line Chart" style="width:100%;height:auto" />
+    </div>
+
+    <div class="card">
+      <h3>Progress Kerja Divisi</h3>
+      <img src="https://via.placeholder.com/600x200?text=Bar+Chart" alt="Bar Chart" style="width:100%;height:auto" />
+    </div>
+
+    <div class="card">
+      <h3>Keterangan Karyawan Masuk</h3>
+      <ul>
+        <li><span class="underline-link">Masuk: 15</span></li>
+        <li><span class="underline-link">Izin: 5</span></li>
+        <li><span class="underline-link">Tanpa Keterangan: 5</span></li>
+      </ul>
+    </div>
   </div>
 
-  <div class="card">
-    <h3>Progress Kerja Divisi</h3>
-    <img src="https://via.placeholder.com/600x200?text=Bar+Chart" alt="Bar Chart" style="width:100%;height:auto" />
-  </div>
+  <script>
 
-  <div class="card">
-    <h3>Keterangan Karyawan Masuk</h3>
-    <ul>
-      <li><span class="underline-link">Masuk: 15</span></li>
-      <li><span class="underline-link">Izin: 5</span></li>
-      <li><span class="underline-link">Tanpa Keterangan: 5</span></li>
-    </ul>
-  </div>
-</div>
+    if(sessionStorage.getItem("userRole") !== "bos") {
+      window.location.href = "index.html";
+    }
 
-<script>
-  // Redirect ke login kalau gak ada session role atau role bukan bos
-  if(sessionStorage.getItem("userRole") !== "bos") {
-    window.location.href = "index.html";
-  }
+    document.getElementById("logoutBtn").addEventListener("click", () => {
+      sessionStorage.removeItem("userRole");
+      window.location.href = "index.html";
+    });
 
-  document.getElementById("logoutBtn").addEventListener("click", () => {
-    sessionStorage.removeItem("userRole");
-    window.location.href = "index.html";
-  });
-</script>
+    document.getElementById("calendarNav").addEventListener("click", () => {
+      window.location.href = "calendar.html";
+    });
+  </script>
 
-</body>
-</html>
+  </body>
+  </html>
