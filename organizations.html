@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Organizations | UmQube</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f7f9fc;
+    }
+
+    .sidebar {
+      width: 250px;
+      background: #4A148C;
+      color: white;
+      height: 150vh;
+      padding: 20px;
+      box-sizing: border-box;
+      float: left;
+    }
+
+    .sidebar h2 {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+
+    .sidebar nav div {
+      cursor: pointer;
+      margin: 15px 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .sidebar nav div span {
+      margin-left: 10px;
+    }
+
+    .sidebar nav div:hover {
+      text-decoration: underline;
+    }
+
+    .main {
+      margin-left: 250px;
+      padding: 40px;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 24px;
+      color: #4A148C;
+    }
+
+    .logout-btn {
+      background-color: #4A148C;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 8px 16px;
+      cursor: pointer;
+    }
+
+    .logout-btn:hover {
+      background-color: #6a27b7;
+    }
+
+    .organization {
+      margin-top: 30px;
+    }
+
+    .organization h2 {
+      font-size: 20px;
+      color: #4A148C;
+      margin-bottom: 20px;
+    }
+
+    .org-columns {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .org-column {
+      flex: 1;
+      min-width: 150px;
+      margin: 0 10px;
+    }
+
+    .org-column ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .org-column ul li {
+      margin-bottom: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>UmQube</h2>
+    <nav>
+      <div id="homeNav"><span>🏠</span><span>Home</span></div>
+      <div id="CalendarNav"><span>📅</span><span>Calendar</span></div>
+      <div><span>👥</span><span><strong>Organizations</strong></span></div>
+      <div><span>🔔</span><span>Reports</span></div>
+      <div><span>❓</span><span>Help</span></div>
+      <div><span>📖</span><span>Manual</span></div>
+      <div><span>⚙️</span><span>Settings</span></div>
+    </nav>
+  </div>
+
+  <div class="main">
+    <div class="header">
+      <h1>Organizations</h1>
+      <button class="logout-btn" onclick="window.location.href='login.html'">Logout</button>
+    </div>
+
+    <div class="organization">
+      <h2><strong>Struktur Organisasi</strong></h2>
+      <div class="org-columns">
+        <div class="org-column">
+          <ul>
+            <li><strong>Kepala Divisi 1</strong></li>
+            <li>Karyawan 1</li>
+            <li>Karyawan 6</li>
+            <li>Karyawan 11</li>
+            <li>Karyawan 16</li>
+            <li>Karyawan 21</li>
+          </ul>
+        </div>
+        <div class="org-column">
+          <ul>
+            <li><strong>Kepala Divisi 2</strong></li>
+            <li>Karyawan 2</li>
+            <li>Karyawan 7</li>
+            <li>Karyawan 12</li>
+            <li>Karyawan 17</li>
+            <li>Karyawan 22</li>
+          </ul>
+        </div>
+        <div class="org-column">
+          <ul>
+            <li><strong>Bos</strong></li>
+            <li>Kepala Divisi 3</li>
+            <li>Karyawan 3</li>
+            <li>Karyawan 8</li>
+            <li>Karyawan 13</li>
+            <li>Karyawan 18</li>
+            <li>Karyawan 23</li>
+          </ul>
+        </div>
+        <div class="org-column">
+          <ul>
+            <li><strong>Kepala Divisi 4</strong></li>
+            <li>Karyawan 4</li>
+            <li>Karyawan 9</li>
+            <li>Karyawan 14</li>
+            <li>Karyawan 19</li>
+            <li>Karyawan 24</li>
+          </ul>
+        </div>
+        <div class="org-column">
+          <ul>
+            <li><strong>Kepala Divisi 5</strong></li>
+            <li>Karyawan 5</li>
+            <li>Karyawan 10</li>
+            <li>Karyawan 15</li>
+            <li>Karyawan 20</li>
+            <li>Karyawan 25</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("homeNav").addEventListener("click", () => {
+      window.location.href = "dashboard-bos.html";
+    });
+
+    document.getElementById("CalendarNav").addEventListener("click", () => {
+    window.location.href = "calendar.html";
+  });
+  </script>
+</body>
+</html>

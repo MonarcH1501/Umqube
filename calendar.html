@@ -15,7 +15,7 @@
       width: 250px;
       background: #4A148C;
       color: white;
-      height: 100vh;
+      height: 150vh;
       padding: 20px;
       box-sizing: border-box;
       float: left;
@@ -167,8 +167,8 @@
     <nav>
       <div id="calendarBoss"><span>🏠</span><span>Home</span></div>
       <div><span>📅</span><span>Calendar</span></div>
-      <div><span>👥</span><span>Organizations</span></div>
-      <div id="calendarNav"><span>🔔</span><span>Reports</span></div>
+      <div id="OrgNav"><span>👥</span><span>Organizations</span></div>
+      <div><span>🔔</span><span>Reports</span></div>
       <div><span>❓</span><span>Help</span></div>
       <div><span>📖</span><span>Manual</span></div>
       <div><span>⚙️</span><span>Settings</span></div>
@@ -271,6 +271,12 @@
     document.getElementById("calendarBoss").addEventListener("click", () => {
       window.location.href = "dashboard-bos.html";
     });
+
+     document.getElementById("OrgNav").addEventListener("click", () => {
+    window.location.href = "organizations.html";
+  });
+
+    
   </script>
 </body>
 </html>

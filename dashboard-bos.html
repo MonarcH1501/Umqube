@@ -40,6 +40,7 @@
     .main {
       margin-left: 250px;
       padding: 20px;
+      
     }
     .header {
       display: flex;
@@ -89,7 +90,7 @@
   <nav>
     <div><span>🏠</span><span>Home</span></div>
     <div id="calendarNav"><span>📅</span><span>Calendar</span></div>
-    <div><span>👥</span><span>Organizations</span></div>
+    <div id="OrgNav"><span>👥</span><span>Organizations</span></div>
     <div><span>🔔</span><span>Reports</span></div>
     <div><span>❓</span><span>Help</span></div>
     <div><span>📖</span><span>Manual</span></div>
@@ -128,23 +129,22 @@
 </div>
 
 <script>
-  // Proteksi role bos
   if(sessionStorage.getItem("userRole") !== "bos") {
     window.location.href = "index.html";
   }
 
-  // Logout
   document.getElementById("logoutBtn").addEventListener("click", () => {
     sessionStorage.removeItem("userRole");
     window.location.href = "index.html";
   });
 
-  // Navigasi kalender
   document.getElementById("calendarNav").addEventListener("click", () => {
     window.location.href = "calendar.html";
   });
+   document.getElementById("OrgNav").addEventListener("click", () => {
+    window.location.href = "organizations.html";
+  });
 
-  // Chart.js - Penjualan Mei
   const salesCtx = document.getElementById('salesChart').getContext('2d');
   new Chart(salesCtx, {
     type: 'line',
