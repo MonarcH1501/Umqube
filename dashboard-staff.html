@@ -1,77 +1,86 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Dashboard Staff - UmQube</title>
-<style>
-  /* Sama style sidebar */
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f4f2f9;
-    color: #333;
-  }
-  .sidebar {
-    width: 250px;
-    background: #4A148C;
-    color: white;
-    height: 100vh;
-    padding: 20px;
-    box-sizing: border-box;
-    float: left;
-  }
-  .sidebar h2 {
-    font-size: 24px;
-    margin-bottom: 30px;
-  }
-  .sidebar nav div {
-    cursor: pointer;
-    margin: 15px 0;
-    display: flex;
-    align-items: center;
-  }
-  .sidebar nav div span {
-    margin-left: 10px;
-  }
-  .sidebar nav div:hover {
-    text-decoration: underline;
-  }
-  .main {
-    margin-left: 250px;
-    padding: 20px;
-  }
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .header h1 {
-    color: #4A148C;
-    text-transform: capitalize;
-  }
-  .button {
-    background: #4A148C;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    cursor: pointer;
-    border-radius: 3px;
-  }
-  .card {
-    background: white;
-    padding: 15px;
-    margin-top: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 8px #ccc;
-  }
-  ul {
-    padding-left: 20px;
-  }
-  ul li {
-    margin-bottom: 5px;
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard Bos - UmQube</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f2f9;
+      color: #333;
+    }
+    .sidebar {
+      width: 250px;
+      background: #4A148C;
+      color: white;
+      height: 150vh;
+      padding: 20px;
+      box-sizing: border-box;
+      float: left;
+    }
+    .sidebar h2 {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+    .sidebar nav div {
+      cursor: pointer;
+      margin: 15px 0;
+      display: flex;
+      align-items: center;
+    }
+    .sidebar nav div span {
+      margin-left: 10px;
+    }
+    .sidebar nav div:hover {
+      text-decoration: underline;
+    }
+    .main {
+      margin-left: 250px;
+      padding: 20px;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .header h1 {
+      color: #4A148C;
+      text-transform: capitalize;
+    }
+    .button {
+      background: #4A148C;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+    .card {
+      background: white;
+      padding: 15px;
+      margin-top: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 8px #ccc;
+    }
+    canvas {
+      max-width: 100%;
+      height: 250px !important;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    ul li {
+      margin-bottom: 5px;
+    }
+    .underline-link {
+      color: #4A148C;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
 
@@ -95,17 +104,31 @@
   </div>
 
   <div class="card">
-    <h3>Tugas Staff Hari Ini</h3>
+    <h3>Diagram Penjualan Mei 2025</h3>
+    <div>
+      <canvas id="salesChart"></canvas>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Progress Kerja Divisi</h3>
+    <div>
+      <canvas id="progressChart"></canvas>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Keterangan Karyawan Masuk</h3>
     <ul>
-      <li>Review laporan</li>
-      <li>Follow up email</li>
-      <li>Meeting dengan tim</li>
+      <li><span class="underline-link">Masuk: 15</span></li>
+      <li><span class="underline-link">Izin: 5</span></li>
+      <li><span class="underline-link">Tanpa Keterangan: 5</span></li>
     </ul>
   </div>
 </div>
 
 <script>
-  if(sessionStorage.getItem("userRole") !== "staff") {
+  if(sessionStorage.getItem("userRole") !== "bos") {
     window.location.href = "index.html";
   }
 
@@ -115,10 +138,65 @@
   });
 
   document.getElementById("calendarNav").addEventListener("click", () => {
-      window.location.href = "calendar-staff.html";
-    });
+    window.location.href = "calendar-staff.html";
+  });
+
+  const salesCtx = document.getElementById('salesChart').getContext('2d');
+  new Chart(salesCtx, {
+    type: 'line',
+    data: {
+      labels: ['1 Mei', '5 Mei', '10 Mei', '15 Mei', '20 Mei', '25 Mei', '31 Mei'],
+      datasets: [{
+        label: 'Penjualan',
+        data: [120, 180, 230, 210, 280, 350, 390],
+        borderColor: '#4A148C',
+        backgroundColor: '#4A148C22',
+        fill: true,
+        tension: 0.4,
+        pointBackgroundColor: '#4A148C'
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          display: false
+        }
+      }
+    }
+  });
+
+  // Chart.js - Progress Kerja Divisi
+  const progressCtx = document.getElementById('progressChart').getContext('2d');
+  new Chart(progressCtx, {
+    type: 'bar',
+    data: {
+      labels: ['Divisi 1', 'Divisi 2', 'Divisi 3', 'Divisi 4', 'Divisi 5'],
+      datasets: [{
+        label: 'Progress (%)',
+        data: [95, 85, 70, 90, 98],
+        backgroundColor: '#4A148C'
+      }]
+    },
+    options: {
+      responsive: true,
+      indexAxis: 'y',
+      scales: {
+        x: {
+          max: 100,
+          ticks: {
+            stepSize: 20
+          }
+        }
+      },
+      plugins: {
+        legend: {
+          display: false
+        }
+      }
+    }
+  });
 </script>
 
 </body>
 </html>
-  
