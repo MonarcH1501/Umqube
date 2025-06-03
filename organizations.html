@@ -110,8 +110,8 @@
       <div id="homeNav"><span>🏠</span><span>Home</span></div>
       <div id="CalendarNav"><span>📅</span><span>Calendar</span></div>
       <div><span>👥</span><span><strong>Organizations</strong></span></div>
-      <div><span>🔔</span><span>Reports</span></div>
-      <div><span>❓</span><span>Help</span></div>
+      <div id="reportsNav"><span>🔔</span><span>Reports</span></div>
+      <div id="helpNav"><span>❓</span><span>Help</span></div>
       <div><span>📖</span><span>Manual</span></div>
       <div><span>⚙️</span><span>Settings</span></div>
     </nav>
@@ -189,6 +189,13 @@
     document.getElementById("CalendarNav").addEventListener("click", () => {
     window.location.href = "calendar.html";
   });
+
+  document.getElementById("reportsNav").addEventListener("click", () => {
+      window.location.href = "reports.html";
+    });
+    document.getElementById("helpNav").addEventListener("click", () => {
+      window.location.href = "help.html";
+    });
   </script>
 </body>
 </html>

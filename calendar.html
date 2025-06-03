@@ -168,15 +168,14 @@
       <div id="calendarBoss"><span>🏠</span><span>Home</span></div>
       <div><span>📅</span><span>Calendar</span></div>
       <div id="OrgNav"><span>👥</span><span>Organizations</span></div>
-      <div><span>🔔</span><span>Reports</span></div>
-      <div><span>❓</span><span>Help</span></div>
+      <div id="reportsNav"><span>🔔</span><span>Reports</span></div>
+      <div id="helpNav"><span>❓</span><span>Help</span></div>
       <div><span>📖</span><span>Manual</span></div>
       <div><span>⚙️</span><span>Settings</span></div>
     </nav>
   </div>
 
   <div class="main">
-    <!-- List Tugas -->
     <div class="tasks-box">
       <h3>List Pekerjaan</h3>
       <div class="task-item">
@@ -275,6 +274,13 @@
      document.getElementById("OrgNav").addEventListener("click", () => {
     window.location.href = "organizations.html";
   });
+
+   document.getElementById("reportsNav").addEventListener("click", () => {
+      window.location.href = "reports.html";
+    });
+    document.getElementById("helpNav").addEventListener("click", () => {
+      window.location.href = "help.html";
+    });
 
     
   </script>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reports | UniQube</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f7f9fc;
+    }
+
+    .sidebar {
+      width: 250px;
+      background: #4A148C;
+      color: white;
+      height: 150vh;
+      padding: 20px;
+      box-sizing: border-box;
+      float: left;
+    }
+
+    .sidebar h2 {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+
+    .sidebar nav div {
+      cursor: pointer;
+      margin: 15px 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .sidebar nav div span {
+      margin-left: 10px;
+    }
+
+    .sidebar nav div:hover {
+      text-decoration: underline;
+    }
+
+    .main {
+      margin-left: 250px;
+      padding: 40px;
+    }
+
+    .reports-container {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      padding: 30px;
+    }
+
+    .reports-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .reports-header h2 {
+      margin: 0;
+      color: #4A148C;
+    }
+
+    .report-section {
+      margin-bottom: 25px;
+    }
+
+    .report-section h3 {
+      color: #333;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 8px;
+    }
+
+    .report-item {
+      padding: 12px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .report-item:last-child {
+      border-bottom: none;
+    }
+
+    .report-item p {
+      margin: 5px 0;
+      color: #555;
+    }
+
+    .back {
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 20px;
+      color: #4a148c;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <h2>UniQube</h2>
+    <nav>
+      <div id="calendarBoss"><span>🏠</span><span>Home</span></div>
+      <div id="calendarNav"><span>📅</span><span>Calendar</span></div>
+      <div id="OrgNav"><span>👥</span><span>Organizations</span></div>
+      <div id="reportsNav"><span>🔔</span><span>Reports</span></div>
+      <div id="helpNav"><span>❓</span><span>Help</span></div>
+      <div><span>📖</span><span>Manual</span></div>
+      <div><span>⚙️</span><span>Settings</span></div>
+    </nav>
+  </div>
+
+  <div class="main">
+    <div class="reports-container">
+      <div class="reports-header">
+        <h2>Reports</h2>
+      </div>
+
+      <div class="report-section">
+        <h3>Laporan Bulanan</h3>
+        <div class="report-item">
+          <p>Divisi 5 memiliki performa terbaik di bulan mei</p>
+        </div>
+        <div class="report-item">
+          <p>Divisi 3 menunjukan peningkatan signifikan di bandingkan bulan April</p>
+        </div>
+        <div class="report-item">
+          <p>Rata rata kehadiran meningkat 10%</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("calendarBoss").addEventListener("click", () => {
+      window.location.href = "dashboard-bos.html";
+    });
+
+     document.getElementById("calendarNav").addEventListener("click", () => {
+    window.location.href = "calendar.html";
+  });
+
+     document.getElementById("OrgNav").addEventListener("click", () => {
+    window.location.href = "organizations.html";
+  });
+  document.getElementById("helpNav").addEventListener("click", () => {
+      window.location.href = "help.html";
+    });
+
+  </script>
+</body>
+</html>
